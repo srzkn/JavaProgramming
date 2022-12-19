@@ -16,11 +16,11 @@ public class Car {
         this.miles = miles;
     }
 
-    public void start(){
+    void start(){
         System.out.println(brand+" "+model+" is starting.");
     }
 
-    public void drive(){
+    void drive(){
         System.out.println(brand+" "+model+" drives fast.");
     }
 
