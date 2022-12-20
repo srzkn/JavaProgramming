@@ -1,27 +1,43 @@
 package day38_Inheritance.ShapeTask;
 
 public class Circle extends Shape{
-    public Circle(String name) {
-        super(name);
+
+    private double radius;
+    public static double pi=3.14;
+
+
+    public double getRadius() {
+        return radius;
     }
 
-    public double pi=3.14;
-    public double r=5;
-
-    public double area(){
-        return pi*r*r;
+    public void setRadius(double radius) {
+        if (radius<=0){
+            System.err.println("invalid radius "+radius);
+            System.exit(1);
+        }
+        this.radius = radius;
     }
 
-    public double perimeter(){
-        return 2*pi*r;
+    public Circle(double radius) {
+        super("daire");
+        setRadius(radius);
+    }
+
+    @Override
+    public double area() {
+        return pi*radius*radius;
+    }
+
+    @Override
+    public double perimeter() {
+        return 2*pi*radius;
     }
 
     @Override
     public String toString() {
         return "Circle{" +
-                "pi=" + pi +
-                ", r=" + r +
-                ", name='" + name + '\'' +
+                "radius=" + radius +
+                ", pi='" + pi + '\'' +
                 ", area='" + area() + '\'' +
                 ", perimeter='" + perimeter() + '\'' +
                 '}';
